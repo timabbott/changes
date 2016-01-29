@@ -60,3 +60,8 @@ from testartifact import TestArtifact
 from testresult import TestResult
 from testresult import TestResultManager
 from user import User
+
+# Hand to add by hand
+from step import STEP_OPTIONS
+from log import LOG_CHUNK_SIZE
+from changes.constants import ProjectStatus, Status, Result
