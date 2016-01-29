@@ -17,6 +17,7 @@ from changes.models import (
     Command, FailureReason, JobPhase, JobPlan, JobStep, Node, SnapshotImage,
 )
 
+from typing import Any
 
 RESULT_CHOICES = ('failed', 'passed', 'aborted', 'skipped', 'infra_failed')
 STATUS_CHOICES = ('queued', 'in_progress', 'finished')
@@ -112,7 +113,7 @@ class JobStepDetailsAPIView(APIView):
         if jobstep is None:
             return '', 404
 
-        args = self.post_parser.parse_args()
+        args = self.post_parser.parse_args() # type: Any
 
         current_datetime = args.date or datetime.utcnow()
 
